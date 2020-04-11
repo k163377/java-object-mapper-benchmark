@@ -1,7 +1,6 @@
 package com.javaetmoi.benchmark;
 
 import java.util.Collection;
-import java.util.concurrent.TimeUnit;
 
 import com.javaetmoi.benchmark.mapping.mapper.bull.BullMapper;
 import com.javaetmoi.benchmark.mapping.mapper.datus.DatusMapper;
@@ -25,12 +24,11 @@ import com.javaetmoi.benchmark.mapping.mapper.modelmapper.ModelMapper;
 import com.javaetmoi.benchmark.mapping.mapper.orika.OrikaMapper;
 import com.javaetmoi.benchmark.mapping.mapper.selma.SelmaMapper;
 import com.javaetmoi.benchmark.mapping.model.entity.OrderFactory;
-import org.openjdk.jmh.runner.options.TimeValue;
 
 @State(Scope.Benchmark)
 public class MapperBenchmark {
 
-    @Param({"Manual", "MapStruct",  "Selma", "JMapper", "datus", "Orika", "ModelMapper", "BULL", "Dozer", "KMapper"})
+    @Param({"Manual", "MapStruct",  "Selma", "JMapper", "datus", "Orika", "BULL", "Dozer", "KMapper"})
     private String type;
 
     private OrderMapper mapper;
