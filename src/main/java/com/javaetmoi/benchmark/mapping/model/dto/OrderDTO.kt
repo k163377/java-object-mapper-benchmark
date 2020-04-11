@@ -6,8 +6,8 @@ import com.javaetmoi.benchmark.mapping.model.Data
 data class OrderDTO(
         var products: List<ProductDTO>,
         var customerName: String,
-        var shippingStreetAddress: String,
-        var shippingCity: String,
+        var shippingStreetAddress: String?,
+        var shippingCity: String?,
         var billingStreetAddress: String,
-        var billingCity: String
+        var billingCity: String?
 )
