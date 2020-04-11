@@ -28,7 +28,7 @@ import com.javaetmoi.benchmark.mapping.model.entity.OrderFactory;
 @State(Scope.Benchmark)
 public class MapperBenchmark {
 
-    @Param({"Manual", "MapStruct",  "Selma", "JMapper", "datus", "Orika", "BULL", "Dozer", "KMapper"})
+    @Param({"Manual", "MapStruct",  "Selma", "JMapper", "datus", "Orika", "KMapper", "BULL", "Dozer"})
     private String type;
 
     private OrderMapper mapper;
