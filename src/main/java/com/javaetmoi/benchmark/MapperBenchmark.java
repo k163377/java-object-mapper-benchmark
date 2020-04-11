@@ -6,6 +6,7 @@ import com.javaetmoi.benchmark.mapping.mapper.bull.BullMapper;
 import com.javaetmoi.benchmark.mapping.mapper.datus.DatusMapper;
 import com.javaetmoi.benchmark.mapping.mapper.kmapper.BoundKMapperMapper;
 import com.javaetmoi.benchmark.mapping.mapper.kmapper.KMaapper;
+import com.javaetmoi.benchmark.mapping.mapper.kmapper.PlainKMapperMapper;
 import com.javaetmoi.benchmark.mapping.model.dto.OrderDTO;
 import com.javaetmoi.benchmark.mapping.model.entity.Order;
 import org.openjdk.jmh.annotations.*;
@@ -29,7 +30,7 @@ import com.javaetmoi.benchmark.mapping.model.entity.OrderFactory;
 @State(Scope.Benchmark)
 public class MapperBenchmark {
 
-    @Param({"Manual", "MapStruct", "Selma", "JMapper", "datus", "BoundKMapper", "Orika", "KMapper", "BULL", "Dozer"})
+    @Param({"Manual", "MapStruct", "Selma", "JMapper", "datus", "BoundKMapper", "Orika", "KMapper", "PlainKMapper", "BULL", "Dozer"})
     private String type;
 
     private OrderMapper mapper;
@@ -68,8 +69,11 @@ public class MapperBenchmark {
             case "KMapper":
                 mapper = new KMaapper();
                 break;
-            case  "BoundKMapper":
+            case "BoundKMapper":
                 mapper = new BoundKMapperMapper();
+                break;
+            case "PlainKMapper":
+                mapper = new PlainKMapperMapper();
                 break;
             default:
                 throw new IllegalStateException("Unknown type: " + type);
