@@ -9,7 +9,7 @@ import com.javaetmoi.benchmark.mapping.model.entity.Product
 import com.mapk.kmapper.BoundKMapper
 import com.mapk.kmapper.KMapper as Mapper
 
-class KMaapper : OrderMapper {
+class KMapperMapper : OrderMapper {
     override fun map(source: Order): OrderDTO = orderMapper.map(source)
 
     companion object {

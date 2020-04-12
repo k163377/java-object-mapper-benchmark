@@ -5,7 +5,7 @@ import java.util.Collection;
 import com.javaetmoi.benchmark.mapping.mapper.bull.BullMapper;
 import com.javaetmoi.benchmark.mapping.mapper.datus.DatusMapper;
 import com.javaetmoi.benchmark.mapping.mapper.kmapper.BoundKMapperMapper;
-import com.javaetmoi.benchmark.mapping.mapper.kmapper.KMaapper;
+import com.javaetmoi.benchmark.mapping.mapper.kmapper.KMapperMapper;
 import com.javaetmoi.benchmark.mapping.mapper.kmapper.PlainKMapperMapper;
 import com.javaetmoi.benchmark.mapping.model.dto.OrderDTO;
 import com.javaetmoi.benchmark.mapping.model.entity.Order;
@@ -30,7 +30,7 @@ import com.javaetmoi.benchmark.mapping.model.entity.OrderFactory;
 @State(Scope.Benchmark)
 public class MapperBenchmark {
 
-    @Param({"Manual", "MapStruct", "Selma", "JMapper", "datus", "BoundKMapper", "Orika", "KMapper", "PlainKMapper", "BULL", "Dozer"})
+    @Param({"Manual", "MapStruct", "Selma", "JMapper", "datus", "BoundKMapper", "KMapper", "Orika", "PlainKMapper", "BULL", "Dozer"})
     private String type;
 
     private OrderMapper mapper;
@@ -67,7 +67,7 @@ public class MapperBenchmark {
                 mapper = new DatusMapper();
                 break;
             case "KMapper":
-                mapper = new KMaapper();
+                mapper = new KMapperMapper();
                 break;
             case "BoundKMapper":
                 mapper = new BoundKMapperMapper();
