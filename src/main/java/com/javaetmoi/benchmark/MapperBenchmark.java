@@ -24,13 +24,12 @@ import com.javaetmoi.benchmark.mapping.mapper.manual.ManualMapper;
 import com.javaetmoi.benchmark.mapping.mapper.mapstruct.MapStructMapper;
 import com.javaetmoi.benchmark.mapping.mapper.modelmapper.ModelMapper;
 import com.javaetmoi.benchmark.mapping.mapper.orika.OrikaMapper;
-import com.javaetmoi.benchmark.mapping.mapper.selma.SelmaMapper;
 import com.javaetmoi.benchmark.mapping.model.entity.OrderFactory;
 
 @State(Scope.Benchmark)
 public class MapperBenchmark {
 
-    @Param({"Manual", "MapStruct", "Selma", "JMapper", "datus", "BoundKMapper", "KMapper", "Orika", "PlainKMapper", "BULL", "Dozer"})
+    @Param({"Manual", "MapStruct", "JMapper", "datus", "BoundKMapper", "KMapper", "Orika", "ModelMapper", "PlainKMapper", "BULL", "Dozer"})
     private String type;
 
     private OrderMapper mapper;
@@ -50,9 +49,6 @@ public class MapperBenchmark {
                 break;
             case "MapStruct":
                 mapper = new MapStructMapper();
-                break;
-            case "Selma":
-                mapper = new SelmaMapper();
                 break;
             case "JMapper":
                 mapper = new JMapperMapper();
