@@ -218,10 +218,13 @@
                     <compilerPlugins>
                         <!-- Or "jpa" for JPA support -->
                         <plugin>no-arg</plugin>
+                        <!-- Or "spring" for the Spring support -->
+                        <plugin>all-open</plugin>
                     </compilerPlugins>
 
                     <pluginOptions>
                         <option>no-arg:annotation=com.javaetmoi.benchmark.mapping.model.Data</option>
+                        <option>all-open:annotation=com.javaetmoi.benchmark.mapping.model.Data</option>
                         <!-- Call instance initializers in the synthetic constructor -->
                         <!-- <option>no-arg:invokeInitializers=true</option> -->
                     </pluginOptions>
@@ -230,6 +233,11 @@
                     <dependency>
                         <groupId>org.jetbrains.kotlin</groupId>
                         <artifactId>kotlin-maven-noarg</artifactId>
+                        <version>${kotlin.version}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.jetbrains.kotlin</groupId>
+                        <artifactId>kotlin-maven-allopen</artifactId>
                         <version>${kotlin.version}</version>
                     </dependency>
                 </dependencies>
