@@ -115,7 +115,7 @@
         <dependency>
             <groupId>com.github.ProjectMapK</groupId>
             <artifactId>KMapper</artifactId>
-            <version>0.21</version>
+            <version>0.23</version>
         </dependency>
 
         <dependency>
